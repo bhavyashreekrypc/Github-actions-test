@@ -1,8 +1,8 @@
-name: git-shell-commands
+name: git shell commands
 
- on: [push]
+on: [push]
 
- jobs:
+jobs:
    to-run-shell-commands:
     runs on: ubuntu:latest
      steps:
