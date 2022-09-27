@@ -1,15 +1,18 @@
-name: shell-commands
+name: git-shell-commands
 
-on: [push]
+ on: [push]
 
-jobs:
-  run-shell-command:
-    runs-on: ubuntu:latest
-    steps:
-     - name: echo a string
-       run: echo "hello world"
-     - name: multiline script
-       run: |
-        npm -v
-        node -v
+ jobs:
+   to-run-shell-commands:
+    runs on: ubuntu:latest
+     steps:
+      - name: echo a string
+        run: echo "hello"
+      - name: multiline command
+        run: |
+          npm -v
+          node -v
+
+    
+
 
