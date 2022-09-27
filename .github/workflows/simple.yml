@@ -3,8 +3,8 @@ name: git shell commands
 on: [push]
 
 jobs:
-   to-run-shell-commands:
-    runs on: ubuntu:latest
+  to-run-shell-commands:
+    runs on: ubuntu-latest
     steps:
       - name: echo a string
         run: echo "hello"
