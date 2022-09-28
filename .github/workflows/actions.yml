@@ -1,18 +1,13 @@
 name: remote ssh command
 on: [push]
-
-
 jobs:
 
   build:
-    name: Build it
+    name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v1
-
     - name: executing remote ssh commands using password
-      uses: ./
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
