@@ -6,11 +6,14 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using ssh key
-      uses: appleboy/ssh-action@master
+    - name: Execute SSH commmands on remote server
+      uses: JimCronqvist/action-ssh@master
+      env:
+       NAME: "Root"
       with:
-         host: ${{ secrets.HOST }}
-         username: ${{ secrets.USERNAME }}
-         key: ${{ secrets.KEY }}
-         port: ${{ secrets.PORT }}
-         script: whoami
+       hosts: 'user@domain.com user@domain2.com:2222'
+       privateKey: ${{ secrets.PRIVATE_KEY }}
+       debug: false
+       command: |
+        ls -lah
+        echo "I am $NAME"
