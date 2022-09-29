@@ -8,12 +8,7 @@ jobs:
     steps:
     - name: Execute SSH commmands on remote server
       uses: JimCronqvist/action-ssh@master
-      env:
-       NAME: "Root"
       with:
-       hosts: 'user@domain.com user@domain2.com:2222'
-       privateKey: ${{ secrets.PRIVATE_KEY }}
-       debug: false
-       command: |
-        ls -lah
-        echo "I am $NAME"
+        hosts: ${{ secrets.HOST }}
+        privateKey: ${{ secrets.PRIVATE_KEY }}
+        command: ls -lah
