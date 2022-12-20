@@ -1,0 +1,12 @@
+name: SSH Remote Commands
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Execute SSH commmands on remote server
+      uses: JimCronqvist/action-ssh@master
+      with:
+        hosts: 'ubuntu@15.206.207.59'
+        privateKey: ${{ secrets.PRIVATE_KEY }}
+        command: ls -lah
